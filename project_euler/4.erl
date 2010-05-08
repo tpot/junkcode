@@ -20,25 +20,20 @@ find_pals() ->
 % Return whether a number is a palindrome 
 
 is_pal(X) when X < 100 -> 
-    place(2, X) == place(1, X);
+    (X div 10) rem 10 == (X rem 10);            % Place 2 == place 1
 
 is_pal(X) when X < 1000 -> 
-    place(3, X) == place(1, X);
+    (X div 100) rem 10 == (X rem 10);           % Place 3 == place 1
 
 is_pal(X) when X < 10000 ->
-    (place(4, X) == place(1, X)) andalso
-    (place(3, X) == place(2, X));
+    (X div 1000) rem 10 == (X rem 10) andalso   % Place 4 == place 1
+    (X div 100) rem 10  == (X div 10) rem 10;   % Place 3 == place 2
 
 is_pal(X) when X < 100000 ->
-    (place(5, X) == place(1, X)) andalso
-    (place(4, X) == place(2, X));
+    (X div 10000) rem 10 == (X rem 10) andalso  % Place 5 == place 1
+    (X div 1000) rem 10  == (X div 10) rem 10;  % Place 4 == place 2
 
 is_pal(X) when X < 1000000 ->
-    (place(6, X) == place(1, X)) andalso
-    (place(5, X) == place(2, X)) andalso
-    (place(4, X) == place(3, X)).
-
-% Return decimal "place" N in number X
-
-place(N, X) ->
-    (X div round(math:pow(10, N-1))) rem 10.
+    (X div 100000) rem 10 == (X rem 10) andalso % Place 6 == place 1
+    (X div 10000) rem 10  == (X div 10) rem 10 andalso % Place 5 == place 2
+    (X div 1000) rem 10   == (X div 100) rem 10.       % Place 4 == place 3
