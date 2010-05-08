@@ -5,8 +5,9 @@
 
 -export([main/1]).
 
-main(_) -> F = prime_factors(317584931803),
-           io:format("~p~n", [lists:nth(1, lists:reverse(F))]).
+main(_) -> 
+    F = prime_factors(317584931803),
+    io:format("~p~n", [lists:nth(1, lists:reverse(F))]).
 
 % Return whether X is a factor of Num
 
