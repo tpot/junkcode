@@ -12,12 +12,10 @@ main(_) ->
 
 find_pals() ->
     lists:sort(lists:filter
-	       (fun(X) -> 
-                    is_pal(X) 
-            end, 
+	       (fun(X) -> is_pal(X) end, 
             lists:map(fun({M,N}) -> M*N end, 
                       [{M,N} || M <- lists:seq(100,999),
-                                N <- lists:seq(100,999) -- [M]]))).
+                                N <- lists:seq(100,999)]))).
 
 % Return whether a number is a palindrome 
 
