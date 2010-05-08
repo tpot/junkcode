@@ -28,16 +28,16 @@ is_pal(X) when X < 1000 ->
     place(3, X) == place(1, X);
 
 is_pal(X) when X < 10000 ->
-    (place(4, X) == place(1, X)) and
+    (place(4, X) == place(1, X)) andalso
     (place(3, X) == place(2, X));
 
 is_pal(X) when X < 100000 ->
-    (place(5, X) == place(1, X)) and
+    (place(5, X) == place(1, X)) andalso
     (place(4, X) == place(2, X));
 
 is_pal(X) when X < 1000000 ->
-    (place(6, X) == place(1, X)) and
-    (place(5, X) == place(2, X)) and
+    (place(6, X) == place(1, X)) andalso
+    (place(5, X) == place(2, X)) andalso
     (place(4, X) == place(3, X)).
 
 % Return decimal "place" N in number X
