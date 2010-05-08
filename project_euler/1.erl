@@ -6,7 +6,7 @@
 
 -export([main/1]).
 
-main([String]) -> io:format("~p~n", [sum_nat(list_to_integer(String))]).
+main(_) -> io:format("~p~n", [sum_nat(1000)]).
 
 sum_nat(N) when N >= 0 -> sum_nat(N - 1, 0).
 
