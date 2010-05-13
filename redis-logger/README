@@ -1,0 +1,30 @@
+A simple logger using redis
+---------------------------
+
+The log reader does a SUBSCRIBE on log:{info,warn,error} keys and
+waits for messages.  The log writer does a PUBLISH on one of
+log:{info,warn,error} keys.
+
+
+Output
+------
+
+Start up redis-server.
+
+  $ ./logmsg.py info info1
+  $ ./logmsg.py info info2
+  $ ./logmsg.py error "Aargh it's all gone horribly wrong"
+
+  $ ./watchlog.py 
+  >>> info: info1
+  >>> info: info2
+  >>> error: Aargh it's all gone horribly wrong
+
+
+TODO
+----
+
+  - Add PSUBSCRIBE support to redis-py.
+
+  - Figure out why redis sends channel name instead of message in
+    PMESSAGE return.
