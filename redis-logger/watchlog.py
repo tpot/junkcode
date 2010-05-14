@@ -4,7 +4,7 @@ import sys, redis
 
 rd = redis.Redis()
 
-rd.subscribe(['log:info', 'log:warn', 'log:error'])
+rd.subscribe(['log:info', 'log:warning', 'log:error'])
 
 for k in rd.listen():
 
