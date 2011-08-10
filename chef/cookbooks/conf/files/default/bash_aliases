@@ -1,0 +1,11 @@
+# Managed by Chef
+
+alias gl="git log --name-status"
+alias gld="git log --patch"
+alias gd="git diff"
+alias gc="git commit"
+alias gdc="git diff --cached"
+alias ga="git add"
+alias gap="git add --patch"
+alias gb="git branch"
+alias gs="git status"
