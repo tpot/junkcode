@@ -32,6 +32,4 @@ end
 
 # Per-node recipes
 
-puts "#{node.keys.join(', ')}"
-
 include_recipe "node::#{node[:hostname]}"
