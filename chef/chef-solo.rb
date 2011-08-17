@@ -1,0 +1,5 @@
+cookbook_path		"#{ENV['HOME']}/trees/junkcode/chef/cookbooks"
+file_backup_path	"#{ENV['HOME']}/.chef-solo/backups"
+file_cache_path		"#{ENV['HOME']}/.chef-solo/cache"
+cache_type 		"BasicFile"
+cache_options		:path => "#{ENV['HOME']}/.chef-solo/checksums"
