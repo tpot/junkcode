@@ -20,6 +20,20 @@ home = Etc.getpwnam(ENV["USER"]).dir
   end
 end
 
+# Scripts
+
+directory "#{home}/bin" do
+  mode 0755
+  action :create
+end
+
+["findall", "findch", "findh"].each do |script|
+  cookbook_file "#{home}/bin/#{script}" do
+    source "scripts/#{script}"
+    mode 0755
+  end
+end 
+
 # Per-node recipes
 
 puts "#{node.keys.join(', ')}"

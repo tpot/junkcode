@@ -1,0 +1,3 @@
+#!/bin/sh
+[ -n "$1" ] && base="$1" && shift || base="."
+find $base -name '*.[ch]' -or -name '*.cpp' -or -name '*.hpp' "$@"
