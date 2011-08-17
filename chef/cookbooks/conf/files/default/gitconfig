@@ -1,2 +1,8 @@
+[user]
+	name = Tim Potter
+
 [color]
         ui = true
+
+[push]
+	default = tracking
