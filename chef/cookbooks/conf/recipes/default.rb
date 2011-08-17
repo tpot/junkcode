@@ -9,9 +9,16 @@
 
 # Various configuration files
 
-["bash_aliases", "screenrc", "gitconfig", "vimrc"].each do |file|
+["bash_aliases", "screenrc", "vimrc"].each do |file|
   cookbook_file "#{ENV['HOME']}/.#{file}" do
     source "#{file}"
+    mode 0644
+  end
+end
+
+["gitconfig"].each do |file|
+  template "#{ENV['HOME']}/.#{file}" do
+    source "#{file}.erb"
     mode 0644
   end
 end
