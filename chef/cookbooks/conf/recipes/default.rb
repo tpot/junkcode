@@ -13,7 +13,7 @@ home = Etc.getpwnam(ENV["USER"]).dir
 
 # Various configuration files
 
-["bash_aliases", "screenrc", "gitconfig"].each do |file|
+["bash_aliases", "screenrc", "gitconfig", "vimrc"].each do |file|
   cookbook_file "#{home}/.#{file}" do
     source "#{file}"
     mode 0644
