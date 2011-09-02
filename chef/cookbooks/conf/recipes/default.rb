@@ -23,6 +23,23 @@ end
   end
 end
 
+# SSH configuration
+
+directory "#{ENV['HOME']}/.ssh" do
+  action :create
+  mode 0700
+end
+
+directory "#{ENV['HOME']}/.ssh/control" do
+  action :create
+  mode 0755
+end
+
+template "#{ENV['HOME']}/.ssh/config" do
+  source "ssh-config.erb"
+  mode 0644
+end
+
 # Scripts
 
 directory "#{ENV['HOME']}/bin" do
