@@ -40,6 +40,14 @@ template "#{ENV['HOME']}/.ssh/config" do
   mode 0644
 end
 
+keys = search(:authorized_keys, "*:*")
+
+template "#{ENV['HOME']}/.ssh/authorized_keys" do
+  source "authorized_keys.erb"
+  mode 0644
+  variables :keys => keys
+end
+
 # Scripts
 
 directory "#{ENV['HOME']}/bin" do
