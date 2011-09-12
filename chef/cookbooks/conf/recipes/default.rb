@@ -61,7 +61,3 @@ end
     mode 0755
   end
 end 
-
-# Per-node recipes
-
-include_recipe "node::#{node[:hostname]}"
