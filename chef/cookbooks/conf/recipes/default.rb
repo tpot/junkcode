@@ -7,6 +7,23 @@
 # All rights reserved - Do Not Redistribute
 #
 
+# Configure chef-solo
+
+directory "#{ENV['HOME']}/.chef" do
+  action :create
+  mode 0755
+end
+
+cookbook_file "#{ENV['HOME']}/.chef/solo.rb" do
+  source "solo.rb"
+  mode 0644
+end
+
+cookbook_file "#{ENV['HOME']}/.chef/node.json" do
+  source "node.json"
+  mode 0644
+end
+
 # Various configuration files
 
 ["bash_aliases", "screenrc", "vimrc"].each do |file|
