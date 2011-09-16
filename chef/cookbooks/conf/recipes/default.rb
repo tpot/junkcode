@@ -33,7 +33,7 @@ end
   end
 end
 
-["gitconfig"].each do |file|
+["bashrc", "gitconfig"].each do |file|
   template "#{ENV['HOME']}/.#{file}" do
     source "#{file}.erb"
     mode 0644
