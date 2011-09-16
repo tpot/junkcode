@@ -19,9 +19,15 @@ cookbook_file "#{ENV['HOME']}/.chef/solo.rb" do
   mode 0644
 end
 
+execute "chef-solo" do
+  command "chef-solo -c #{ENV['HOME']}/.chef/solo.rb -j #{ENV['HOME']}/.chef/node.json"
+  action :nothing
+end
+
 cookbook_file "#{ENV['HOME']}/.chef/node.json" do
   source "node.json"
   mode 0644
+  notifies :run, resources(:execute => "chef-solo")
 end
 
 # Various configuration files
