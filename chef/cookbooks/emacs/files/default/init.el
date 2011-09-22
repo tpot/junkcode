@@ -1,12 +1,12 @@
 ; Disable deviant GUI stuff
 
-(tool-bar-mode)
-(menu-bar-mode)
-(scroll-bar-mode)
+(tool-bar-mode 0)
+(menu-bar-mode 0)
+(scroll-bar-mode 0)
 
 ; Enable auto-revert mode by default
 
-(auto-revert-mode)
+(auto-revert-mode 1)
 
 ; Some basic keybindings
 
