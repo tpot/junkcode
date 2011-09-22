@@ -1,3 +1,10 @@
+<% @extra_config.each do |host| -%>
+Host <%= host["host"] %>
+<% (host.keys - ["host", "id"]).each do |key| %>
+	<%= key %> <%= if host[key].kind_of?(Array): host[key].join(', ') else host[key] end %>
+<% end %>
+<% end %>
+
 Host *
 	ControlMaster auto
 	ControlPersist yes

@@ -58,9 +58,12 @@ directory "#{ENV['HOME']}/.ssh/control" do
   mode 0755
 end
 
+extra_config = search(:ssh_config, "*:*")
+
 template "#{ENV['HOME']}/.ssh/config" do
   source "ssh-config.erb"
   mode 0644
+  variables(:extra_config => extra_config)
 end
 
 keys = search(:authorized_keys, "*:*")
