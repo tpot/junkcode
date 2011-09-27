@@ -2,6 +2,7 @@
   "run_list": ["recipe[conf]", "recipe[emacs]"],
   "git": {
     "name": "Tim Potter",
-    "email": "tpot@hp.com"
-  }
+    "email": "tpot@frungy.org"
+  },
+  "http_proxy": "http://192.168.1.1:8123"
 }

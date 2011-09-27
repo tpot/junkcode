@@ -7,7 +7,9 @@ Host <%= host["host"] %>
 <% end %>
 Host *
 	ControlMaster auto
+<% if node["platform"] != "mac_os_x": %>
 	ControlPersist yes
+<% end %>
 	ControlPath ~/.ssh/control/%h.%p.%r
         HashKnownHosts no
         ForwardAgent no
