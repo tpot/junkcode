@@ -81,7 +81,7 @@ directory "#{ENV['HOME']}/bin" do
   action :create
 end
 
-["findall", "findch", "findh"].each do |script|
+["findall", "findch", "findh", "converge"].each do |script|
   cookbook_file "#{ENV['HOME']}/bin/#{script}" do
     source "scripts/#{script}"
     mode 0755

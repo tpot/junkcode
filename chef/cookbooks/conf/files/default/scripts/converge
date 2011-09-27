@@ -1,0 +1,2 @@
+#!/bin/sh
+exec chef-solo -c ~/.chef/solo.rb -j ~/.chef/node.json
