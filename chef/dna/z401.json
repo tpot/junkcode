@@ -1,7 +1,0 @@
-{
-  "run_list": ["recipe[conf]", "recipe[emacs]"],
-  "git": {
-    "name": "Tim Potter",
-    "email": "tpot@hp.com"
-  }
-}
