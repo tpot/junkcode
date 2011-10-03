@@ -11,6 +11,8 @@
 ; Some basic keybindings
 
 (global-set-key [f4] (lambda () (interactive) (message buffer-file-name)))
+(global-set-key [f5] 'previous-error)
+(global-set-key [f6] 'next-error)
 (global-set-key [f12] 'undo)
 
 (global-set-key [(meta g)] 'goto-line)
