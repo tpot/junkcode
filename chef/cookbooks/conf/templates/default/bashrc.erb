@@ -107,3 +107,5 @@ export EDITOR=vi
 <% if node[:http_proxy]: %>
 export http_proxy=<%= node[:http_proxy] %>
 <% end %>
+
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
