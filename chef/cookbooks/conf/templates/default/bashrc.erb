@@ -107,3 +107,8 @@ export EDITOR=vi
 <% if node[:http_proxy]: %>
 export http_proxy=<%= node[:http_proxy] %>
 <% end %>
+
+<% if node[:platform] == "mac_os_x" %>
+# For mac ports
+export PATH=$PATH:/opt/local/bin
+<% end %>
