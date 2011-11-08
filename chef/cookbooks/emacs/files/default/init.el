@@ -16,3 +16,8 @@
 (global-set-key [f12] 'undo)
 
 (global-set-key [(meta g)] 'goto-line)
+
+; Cucumber feature mode
+(add-to-list 'load-path "~/.emacs.d")
+(require 'feature-mode)
+(add-to-list 'auto-mode-alist '("\.feature$" . feature-mode))
