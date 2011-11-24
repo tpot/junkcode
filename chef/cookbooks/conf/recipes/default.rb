@@ -87,3 +87,15 @@ end
     mode 0755
   end
 end 
+
+# Misc other stuff 
+
+cookbook_file "#{ENV['HOME']}/bin/git-prompt.sh" do
+  source "git-prompt.sh"
+  mode 0755
+end
+
+cookbook_file "#{ENV['HOME']}/.git-prompt.conf" do
+  source "git-prompt.conf"
+  mode 0644
+end

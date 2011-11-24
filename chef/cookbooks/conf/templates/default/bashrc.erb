@@ -114,3 +114,6 @@ export http_proxy=<%= node[:http_proxy] %>
 # For mac ports
 export PATH=$PATH:/opt/local/bin
 <% end %>
+
+# Git prompt
+[[ $- == *i* ]]  && . $HOME/bin/git-prompt.sh
