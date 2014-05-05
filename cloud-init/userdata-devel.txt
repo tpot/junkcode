@@ -1,0 +1,13 @@
+#cloud-config
+--- 
+apt_update: true
+apt_upgrade: true
+manage_etc_hosts: true
+packages:
+  - build-essential
+  - git
+  - polipo
+  - python-pip
+runcmd:
+  - echo 'Acquire::http::proxy "http://localhost:8123";\nAcquire::https::proxy "http://localhost:8123";' > /etc/apt/apt.conf.d/99proxy
+  - echo 'export http_proxy=http://localhost:8123\nexport https_proxy=http://localhost:8123' > /etc/profile.d/Z99-proxy.sh
