@@ -10,4 +10,4 @@ packages:
   - python-pip
 runcmd:
   - echo 'Acquire::http::proxy "http://localhost:8123";\nAcquire::https::proxy "http://localhost:8123";' > /etc/apt/apt.conf.d/99proxy
-  - echo 'export http_proxy=http://localhost:8123\nexport https_proxy=http://localhost:8123' > /etc/profile.d/Z99-proxy.sh
+  - echo 'export http_proxy=http://localhost:8123\nexport https_proxy=http://localhost:8123\nexport no_proxy=localhost,127.0.0.1' > /etc/profile.d/Z99-proxy.sh
