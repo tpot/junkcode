@@ -1,0 +1,16 @@
+#!/bin/sh
+#
+# Close a TCP port on a VirtualBox VM
+#
+# Usage: vbox-closeport VMNAME PORT
+#
+
+VMNAME=$1
+PORT=$2
+
+if [ -z "$VMNAME" -o -z "$PORT" ]; then
+   echo "Usage: $0 VMNAME PORT"
+   exit 1
+fi
+
+VBoxManage modifyvm "$VMNAME" --natpf1 delete "tcp-port$PORT"
