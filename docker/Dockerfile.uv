@@ -1,0 +1,7 @@
+# Demo of installing Python libraries and apps with uv
+FROM python:slim
+
+RUN pip install uv
+RUN uv pip install --system harlequin
+
+CMD ["harlequin", "--locale", "C"]
